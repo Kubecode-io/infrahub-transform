@@ -1,0 +1,16 @@
+---
+python_transforms:
+  - name: device_config_transform
+    class_name: DeviceConfigTransform
+    file_path: "device_config_render/device_config.py"
+queries:
+  - name: device_config_query
+    file_path: "device_config_render/device_config.gql"
+artifact_definitions:
+  - name: "Device configuration file"
+    artifact_name: "device_configuration"
+    parameters:
+      name: "name__value"
+    content_type: "text/plain"
+    targets: "Kuberoo"
+    transformation: "device_config_transform"
