@@ -10,7 +10,7 @@ artifact_definitions:
   - name: "Switch Check Results"
     artifact_name: "switch_check"
     parameters:
-      name: "name__value"
+      name: "ids"
     content_type: "text/plain"
     targets: "avd_leaf_switches"
     transformation: "switch_check_transform"
