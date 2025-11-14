@@ -1,0 +1,49 @@
+---
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: AvdLeafswitch
+  data:
+    - name: lon-lab-arlf01
+      node_id: 1
+      serial_number: JPE20254575
+      os_version: 4.34.0F
+      platform: DCS-7050SX3-48YC8
+      primary_address:
+        data:
+          address: 192.168.104.92/24
+      uplink_interfaces: ['Ethernet49/1', 'Ethernet50/1']
+      mlag_interfaces: ['Ethernet55/1', 'Ethernet56/1']
+      nodegroup: GREENFORD_L3_LEAF1
+      uplink_switch_interfaces:
+        data:
+          - name: Ethernet1/1
+            speed: 1000
+            device: lon-lab-arsp01
+          - name: Ethernet1/1
+            speed: 1000
+            device: lon-lab-arsp02
+---
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: DcimInterfaceL3
+  data:
+    - name: Loopback0
+      speed: 1000
+      device: lon-lab-arlf01
+      ip_addresses:
+        data:
+          - address: 10.255.0.3/32
+---
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: DcimInterfaceL3
+  data:
+    - name: Loopback1
+      speed: 1000
+      device: lon-lab-arlf01
+      ip_addresses:
+        data:
+          - address: 10.255.1.3/32
