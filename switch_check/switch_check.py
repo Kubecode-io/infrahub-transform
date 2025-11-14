@@ -11,11 +11,11 @@ class Transform(InfrahubTransform):
 
         s = requests.Session()
         kriten_url = "http://kriten-dev.192.168.10.190.nip.io/api/v1/jobs/"
-        kriten_launch_url = kriten_url + "hello-kriten"
+        kriten_launch_url = kriten_url + "infrahubanta"
 
         payload = json.dumps({
-        "device_name": device_name,
-        "device_primary_address": device_primary_address
+        "name": device_name,
+        "primary_address": device_primary_address
         })
         headers = {
         'Content-Type': 'application/json',
