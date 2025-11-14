@@ -2,9 +2,7 @@ query ($name: String) {
   AvdLeafswitch(name__value: $name) {
     edges {
       node {
-        name {
-          value
-        }
+
         primary_address {
           node {
             address {
